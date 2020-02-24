@@ -146,8 +146,7 @@ $$
 
   
 
-  {:.center}
-![2](C:\Users\dhdcj\Desktop\게임이탈예측\2.PNG)
+![2](docs/2.PNG)
   
 
   
@@ -168,7 +167,7 @@ $$
 
   
 
-  ![](C:\Users\dhdcj\Desktop\게임이탈예측\3.png)
+  ![3](docs/3.png)
 
   *정확한 예측이 불가능하다고 생각하면, 과대평가하는것이 score를 최대화 하는 방법이다!!*
 
@@ -215,7 +214,7 @@ G[실제 과금유저 data] --> H[Model 4 평균과금액 예측 model]
 
 - 데이터의 클래스 비율의 차이가 생기면 단순히 우세한 클래스 택해버리는 경향이 발생하게 된다. 정확도가 높아도 데이터 갯수가 적은 클래스의 재현율(recall-rate)이 급격히 작아지는 현상이 발생할 수도 있다.
 
-<img src="C:\Users\dhdcj\Desktop\게임이탈예측/4.PNG" style="zoom:200%;" />
+![4](docs/4.png)
 
 - 우세하게 높은 '이탈' 의 샘플수를 '생존'수와 같게 만들어준다.
 
@@ -225,7 +224,7 @@ G[실제 과금유저 data] --> H[Model 4 평균과금액 예측 model]
 
 ​	*binary 분류를 관통하는 meta 방법은 'stacking'이다. 4가지의 base model을 가지고 각각의 이탈/생존 확률을 구하고, 구한 각확률이 logistic model의 또 다른 input이 되어 최종적으로 생존과 이탈을 구분한다.*
 
-<img src="C:\Users\dhdcj\Desktop\게임이탈예측/5.PNG" style="zoom: 200%;" />
+![5](docs/5.PNG)
 
 - baseline-model
   - XGBoost
@@ -287,7 +286,7 @@ result = churn_yn_model.predict_proba(s_test) # 결과확률 반환.
 
 ​	*실제 이탈한 유저들의 생존기간이 얼마나 되는지 histogram를 보면 아래와 같다.*
 
-![](C:\Users\dhdcj\Desktop\게임이탈예측\6.PNG)
+![6](docs\6.PNG)
 
 ​	1) *전반적인 경향성은 생존일이 낮을 때 빈도수가 많고, 생존일이 증가할수록 그빈도가 감소하는 특징을 보여준다.분포의 모양이 이쁘게(?) 일반적으로 알려진 분포들의 모양을 보여주지는 않고 편차도 조금 있지만, 대략적인 형태는 포아송분포 혹은 감마분포, 음이항 분포의 성질을 보여주는것으로 생각했다. 일반적인 선형회귀의 방법으로 예측한다면 정확한 예측이 불가능할 것이다.*
 
