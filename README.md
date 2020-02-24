@@ -214,7 +214,7 @@ G[실제 과금유저 data] --> H[Model 4 평균과금액 예측 model]
 
 - 데이터의 클래스 비율의 차이가 생기면 단순히 우세한 클래스 택해버리는 경향이 발생하게 된다. 정확도가 높아도 데이터 갯수가 적은 클래스의 재현율(recall-rate)이 급격히 작아지는 현상이 발생할 수도 있다.
 
-![4](docs/4.png)
+![4](docs/4.PNG)
 
 - 우세하게 높은 '이탈' 의 샘플수를 '생존'수와 같게 만들어준다.
 
@@ -347,7 +347,7 @@ nn_model_st = model_st.fit(nn_x_train, y_train.survival_time, epochs=300, batch_
 
 ##### 2.3.1) under sampling
 
-<img src="C:\Users\dhdcj\Desktop\게임이탈예측/7.PNG" style="zoom:200%;" />
+![7](docs/7.PNG)
 
 * 과금유저와 비과금 유저의 샘플수를 같게 한다.
 
@@ -373,7 +373,7 @@ nn_model_st = model_st.fit(nn_x_train, y_train.survival_time, epochs=300, batch_
 
 *평균과금액 예측시에는 '생존기간'이 추가적인 변수로 사용된다. 그 이유는 아래와 같다.*
 
-<img src="C:\Users\dhdcj\Desktop\게임이탈예측/8.PNG" style="zoom:200%;" />
+![8](docs/8.PNG)
 
 *'평균과금액'은 총과금액/생존기간 으로 산술되는데,  동일 금액을 과금했다하더라도 '생존기간'이 짧을수록 '평균과금액'은 커진다. 초기에 과금하고 초기에 이탈하는 유저의 경우 생존하는 유저에 비해서 총과금액의 액수는 작을수 있지만 평균 과금액은 클 가능성이 크다. 위 그래프에서 나타내는 것처럼 생존기간이 길어지면 그만큼 산술식의 분모가 커지기 때문에 평균 과금액은 줄어들게 된다.*
 
@@ -538,7 +538,7 @@ F --> J[평균과금액]
 
 *test data로 이탈 및 과금의 threshold에 따른 기대 score를 비교 해보았다*
 
-![](C:\Users\dhdcj\Desktop\게임이탈예측\9.PNG)
+![9](docs/9.PNG)
 
 *놀랍게도 한참 낮은 0.05 수준에서 기대score가 최대화가 되는 것을 확인할 수 있었다!.*
 
